@@ -1,0 +1,29 @@
+server:
+  port: 8090
+
+spring:
+  thymeleaf:
+    cache: true
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src
+  datasource:
+    url: jdbc:mysql://121.5.139.173:63306/fund?autoReconnect=true&xuseSSL=false
+    username: fund
+    password: fund
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  servlet:
+    multipart:
+      max-request-size: 200MB
+      max-file-size: 200MB
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
